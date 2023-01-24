@@ -1,0 +1,28 @@
+
+
+dotenv: .env
+wallets: 
+  from_key: ${PRIVATE_KEY}
+
+dependencies:
+  - smartcontractkit/chainlink-brownie-contracts@0.5.1
+  - OpenZeppelin/openzeppelin-contracts@4.8.0
+  - SimonKuzmichev/v2-periphery@1.1.0-beta.0
+
+compiler:
+  solc:
+    remappings:
+      - "@chainlink=smartcontractkit/chainlink-brownie-contracts@0.5.1"
+      - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.8.0"
+      - "@uniswap=SimonKuzmichev/v2-periphery@1.1.0-beta.0"
+
+
+
+networks:
+  default: mainnet-fork-dev
+  mainnet-fork-dev:
+    sushiswap_v2_router: '0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F'
+    uniswap_v2_router: '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D'
+    verify: False
+
+
